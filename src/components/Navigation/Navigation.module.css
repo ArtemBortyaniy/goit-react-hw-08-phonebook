@@ -1,0 +1,16 @@
+.navLink {
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navLink:active {
+  color: orange;
+}
+
+.marginRight {
+  margin-right: 30px;
+}

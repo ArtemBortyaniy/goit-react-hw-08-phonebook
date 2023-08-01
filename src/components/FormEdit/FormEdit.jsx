@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { editContacts } from 'redux/operations';
+import { editContacts } from 'redux/contacts/operations';
 
 export const FormEdit = ({ id, name, phone, onClose }) => {
   const dispatch = useDispatch();

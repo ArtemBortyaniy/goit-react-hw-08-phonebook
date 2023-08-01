@@ -1,0 +1,12 @@
+.authLink {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.authLink:active {
+  color: orange;
+}
