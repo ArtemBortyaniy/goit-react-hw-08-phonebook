@@ -14,10 +14,6 @@ export const FormEdit = ({ id, name, number, onClose }) => {
         number: form.elements.number.value,
       })
     );
-    console.log({
-      name: form.elements.name.value,
-      number: form.elements.number.value,
-    });
     onClose();
   };
 
