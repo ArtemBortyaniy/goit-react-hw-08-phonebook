@@ -11,7 +11,7 @@ export const ContactForm = () => {
     dispatch(
       addContacts({
         name: form.elements.name.value,
-        phone: form.elements.phone.value,
+        number: form.elements.number.value,
       })
     );
     form.reset();
@@ -33,7 +33,7 @@ export const ContactForm = () => {
         Number
         <input
           type="tel"
-          name="phone"
+          name="number"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           className={css.input}

@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { editContacts } from 'redux/contacts/operations';
 
-export const FormEdit = ({ id, name, phone, onClose }) => {
+export const FormEdit = ({ id, name, number, onClose }) => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -11,9 +11,13 @@ export const FormEdit = ({ id, name, phone, onClose }) => {
       editContacts({
         contactId: id,
         name: form.elements.name.value,
-        phone: form.elements.phone.value,
+        number: form.elements.number.value,
       })
     );
+    console.log({
+      name: form.elements.name.value,
+      number: form.elements.number.value,
+    });
     onClose();
   };
 
@@ -34,8 +38,8 @@ export const FormEdit = ({ id, name, phone, onClose }) => {
         Number
         <input
           type="tel"
-          name="phone"
-          placeholder={phone}
+          name="number"
+          placeholder={number}
           // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required

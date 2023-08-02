@@ -9,8 +9,8 @@ export const ContactList = () => {
   return (
     <div className={css.container}>
       <ul className={css.list}>
-        {visibleContacts.map(({ id, name, phone }) => {
-          return <ContactItem id={id} name={name} phone={phone} key={id} />;
+        {visibleContacts.map(({ id, name, number }) => {
+          return <ContactItem id={id} name={name} number={number} key={id} />;
         })}
       </ul>
     </div>

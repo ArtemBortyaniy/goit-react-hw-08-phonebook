@@ -5,7 +5,7 @@ import { FormEdit } from 'components/FormEdit/FormEdit';
 import { useDispatch } from 'react-redux';
 import { deleteContacts } from 'redux/contacts/operations';
 
-export const ContactItem = ({ id, name, phone }) => {
+export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
 
@@ -20,7 +20,7 @@ export const ContactItem = ({ id, name, phone }) => {
   return (
     <li className={css.item}>
       <p>
-        {name}: {phone}
+        {name}: {number}
       </p>
       <button type="button" id={id} onClick={() => handleToggleModal()}>
         Edit
@@ -37,7 +37,7 @@ export const ContactItem = ({ id, name, phone }) => {
           <FormEdit
             id={id}
             name={name}
-            phone={phone}
+            number={number}
             onClose={handleToggleModal}
           />
         </Modal>

@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://goit-task-manager.herokuapp.com';
 
@@ -16,7 +17,9 @@ export const register = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/signup', credentials);
-      setAuthHeader(register.data.token);
+      console.log(response.data.token, response.data);
+      setAuthHeader(response.data.token);
+      toast.success('user is registered');
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -29,7 +32,8 @@ export const logIn = createAsyncThunk(
   async (credentials, thunkAPI) => {
     try {
       const response = await axios.post('/users/login', credentials);
-      setAuthHeader(register.data.token);
+      setAuthHeader(response.data.token);
+      toast.success('you are logged in');
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);
@@ -39,8 +43,9 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk('auth/logOut', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/login');
+    await axios.post('/users/logout');
     clearAuthHeader();
+    toast.success('you got out');
   } catch (e) {
     return thunkAPI.rejectWithValue(e.message);
   }
@@ -62,6 +67,7 @@ export const refreshUser = createAsyncThunk(
       // If there is a token, add it to the HTTP header and perform the request
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
+      toast.success('you are logged in');
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

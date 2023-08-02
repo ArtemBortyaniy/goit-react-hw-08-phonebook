@@ -54,7 +54,11 @@ const contactsSlise = createSlice({
       state.error = null;
       state.items = state.items.map(item => {
         return item.id === action.payload.id
-          ? { ...item, name: action.payload.name, phone: action.payload.phone }
+          ? {
+              ...item,
+              name: action.payload.name,
+              number: action.payload.number,
+            }
           : item;
       });
     },
