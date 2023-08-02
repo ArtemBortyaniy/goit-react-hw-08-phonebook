@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { editContacts } from 'redux/contacts/operations';
+import './FormEdit.css';
+import { Button } from '@mui/material';
 
 export const FormEdit = ({ id, name, number, onClose }) => {
   const dispatch = useDispatch();
@@ -18,14 +20,14 @@ export const FormEdit = ({ id, name, number, onClose }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-edit" onSubmit={handleSubmit}>
       <label>
         Name
         <input
+          className="form-edit-input"
           type="text"
           name="name"
           placeholder={name}
-          // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
@@ -33,16 +35,18 @@ export const FormEdit = ({ id, name, number, onClose }) => {
       <label>
         Number
         <input
+          className="form-edit-input"
           type="tel"
           name="number"
           placeholder={number}
-          // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
       </label>
       <div>
-        <button type="submit">edit contact</button>
+        <Button variant="contained" type="submit">
+          Edit
+        </Button>
       </div>
     </form>
   );

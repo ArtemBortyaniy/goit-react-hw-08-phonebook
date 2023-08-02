@@ -1,0 +1,49 @@
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5; /* Цвет фона */
+  background-image: linear-gradient(
+    to bottom right,
+    #ffffff,
+    #f5f5f5
+  ); /* Градиентный фон */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень для формы */
+  padding: 30px;
+}
+
+.form-edit label {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.form-edit-input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-edit-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-edit-button:hover {
+  background-color: #45a049;
+}
+
+.form-edit-button:active {
+  background-color: #3e8e41;
+}

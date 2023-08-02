@@ -11,10 +11,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-height: 300px;
-  max-height: 600px;
-  max-width: 500px;
   padding: 20px;
-  background-color: grey;
   border-radius: 4px;
 }

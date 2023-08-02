@@ -1,11 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { lazy } from 'react';
 import { Suspense } from 'react';
-// import Layout from './Layout/Layout';
-// import Home from 'pages/Home/Home';
-// import Register from 'pages/Register/Register';
-// import Login from 'pages/Login/Login';
-// import Contacts from 'pages/Contacts/Contacts';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestrictedRoute';
 import { useEffect } from 'react';

@@ -3,13 +3,12 @@ import { Suspense } from 'react';
 import AppBar from 'components/AppBar/AppBar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import css from './Layout.module.css';
 
 const Layout = () => {
   return (
     <div>
       <AppBar />
-      <main className={css.mainContaoner}>
+      <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
